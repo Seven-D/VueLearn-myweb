@@ -2,11 +2,22 @@
 
 > A Vue.js project,Learning Vue Lessons adv
 
-## Build Setup
+## Build Setup  运行环境
 
 ``` bash
 # install dependencies 安装依赖
 npm install
+
+#安装bootstrap4框架
+npm install bootstrap --save --save-exact
+
+#安装axios库
+npm install --save --save-exact axios vue-axios
+
+#安装路由库
+npm install vue-router --save --save-exact  安装路由库
+
+
 
 # serve with hot reload at localhost:8080  运行
 npm run dev
@@ -19,7 +30,7 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-##VUE.JS的进阶课程 
+##VUE.JS的进阶课程
 ``` bash
 概要：
 Vue.js是一套用于构建用户界面的渐进式框架。
@@ -32,13 +43,13 @@ VUe的核心库只关注视图层，不仅易于上手，还便于与第三方�
  + vuex :状态管理
  + transition :动画效果
  + etc.
- 
+
   基础知识：
   + javascript/ES6
   + HTML5/CSS3
   + 小马VUE入门课程第一季---->
-``` 
-  
+```
+
 ##命令行工具的安装
 ```bash
 之前所讲解的VUE入门教程都是在浏览器上直接引用VUE,没有安装。
@@ -73,12 +84,12 @@ VUE命令默认提供的各种模板, 用vue list去看看:
     npm run dev  开发运行项目
     npm run build  发布打包
     code .
-    
+
     主要：
     * src 源文件目录，以后所有的代码编写基本都在这个目录；
     * dist 打包的目录，biuld发布的文件放在此；
     * package.json 项目配置文件，重要！
-    
+
 ```
 ##引入bootstrap4框架（库）
 ```bash
@@ -86,7 +97,7 @@ vue-webpack工程导入bootstrap框架  ,当前网面开发应用最多的一个
 **让网页组件更加漂亮！**
 实战指令：
     cd myweb  进入工程目录
-    npm install bootstrap --save --save-exact  安装bootstrap, 
+    npm install bootstrap --save --save-exact  安装bootstrap,
     参数意义：--save作为固定依赖存到package.json文件中，--save-exact指精确版本号
     nano main.js  编辑应用程序的入口文件，这是整个应用的入口，所有的全局都在此声明
     ...
@@ -101,7 +112,7 @@ vue-webpack工程导入bootstrap框架  ,当前网面开发应用最多的一个
     <button class="btn btn-danger">注意</button>
     ...
     npm start
-    
+
     可以看到三个按钮出现在页面中，并且样式就是bootstrap的样式，漂亮。
     如果把import 'bootstrap/dist/css/bootstrap.min.css'这句注释掉，
     按钮的效果回到标准的HTML5的样式。
@@ -118,7 +129,7 @@ vue-webpack工程导入bootstrap框架  ,当前网面开发应用最多的一个
    不提交如何取得数据呢？通过Ajax库就能够取得！
 2、怎么使用？
    $cd myweb 进入工程目录
-   $npm install --save --save-exact axios vue-axios  
+   $npm install --save --save-exact axios vue-axios
    安装两个内容：axios本库，以及vue-axios这个是axios封闭的VUE组件，可简化代码使用。
    **注册组件**：
    $nano main.js 编辑main.js文件
@@ -146,19 +157,19 @@ vue-webpack工程导入bootstrap框架  ,当前网面开发应用最多的一个
            });
        }
    };
-     
+
 ```
 ##使用自定义CSS样式
 ```bash
 定义属于自己的样式单文件my.css
 （bootstrap框架的样式已经很漂亮啦！但有时候也不能满足leader的需求呢·￥%……%）
 实战指令：
-    $cd assets  
-    $nano my.xss  
+    $cd assets
+    $nano my.xss
     ...
     .myclass1{
         color:red;
-        border: 1px solid blue;        
+        border: 1px solid blue;
     }
     ...
     $cd ../
@@ -182,14 +193,14 @@ vue命令行开发模式为我们带来的组件开发方式。（区别于上�
   + template :组件的HTML内容
   + sctript ：组件的JS代码（ES6语法）
   + style : 组件的CSS样式单
- 
+
 实战指令：
    <template>
        <div class="container">
            <h1>{{msg}}</h1>
        </div>
    </template>
-   
+
    <script>
    //import...
    export default {
@@ -201,7 +212,7 @@ vue命令行开发模式为我们带来的组件开发方式。（区别于上�
        }
    }
    </sctipt>
-   
+
    <style scoped>  <!--这里的scoped参数表示只作用于本组件，不影响全局，建议都用-->
    h1 {
       font-weight:normal;
@@ -219,7 +230,7 @@ https://github.com/vuejs/vue-router
 实战指令：
     $npm install vue-router --save --save-exact  安装路由库
     （在初始化工程的时候，我们已经安装过这个库，这里不用再安装。）
-    
+
 **路由组件的设定**
 1、src/router/index.js
 2、src/main.js
@@ -236,12 +247,12 @@ https://github.com/vuejs/vue-router
     * About.vue
     * router/index.js
     * App.vue
-    
- ******* router/index.js******   
+
+ ******* router/index.js******
     import HelloWorld from '@/components/HelloWorld'
     import News from  '@/components/News'
-    import About from '@/components/About'      
-    Vue.use(Router)    
+    import About from '@/components/About'
+    Vue.use(Router)
     export default new Router({
       routes: [
         {
@@ -261,8 +272,8 @@ https://github.com/vuejs/vue-router
         }
       ]
     })
- **********App.vue********** 
- <template>  
+ **********App.vue**********
+ <template>
    <div>
      <p>
        <!--使用router-link组件来导航-->
@@ -273,10 +284,10 @@ https://github.com/vuejs/vue-router
        <router-link to="/news">新闻</router-link>
     </p>
   </div>
- </template>  
-  
- 还是在代码中去实际实现吧，懒得写了这儿……—（）（）  
-    
+ </template>
+
+ 还是在代码中去实际实现吧，懒得写了这儿……—（）（）
+
 ```
 ##动态路由
 ```bash
@@ -285,11 +296,11 @@ https://github.com/vuejs/vue-router
 **动态路由的匹配设置**
 实战：
      定制游戏玩家的动态路径：/player/:id
-     
+
      * Player.vue
      * router/index.js
      * App.vue
-     
+
      + Player.vue
      <template>
          <div>
@@ -297,7 +308,7 @@ https://github.com/vuejs/vue-router
              <p>{{detail}}</p>
          </div>
      </template>
-     
+
      看项目文件吧%———内容多在这里不好写了~
 
 ```
@@ -312,9 +323,9 @@ https://github.com/vuejs/vue-router
      * Player/stats.vue
      * router/index.js
      * Player.vue
-     
+
      四个文件的编写请看文件代码吧
-     
+
 ```
 ##路由也编程
 ```bash
@@ -323,19 +334,19 @@ https://github.com/vuejs/vue-router
 **知识点：**
 在前面的讲解中，我们是通过<router-link>标签来生成页面的<a>标签，然后进行URL转向的。
 其实我们不仅可以通过标签来实现，也可以通过编程来实现，GOGOGO~~~
-    
+
     * router-link (之前的做法)
     * router.push(location,onComplete?,onAbort?) (注意，这里是一个方法router.push)
-    
+
 实战学习：
-    #App.vue  #  
+    #App.vue  #
     <template>
         <div id="App">
             <p>
               <!--路由编程部分--->
               <button @click="btnClick(1)" >库里2</button>
               <button @click="btnClick(2)" >哈登2</button>
-        
+
               <!--注意与上面的区别，这里to之前面有一个冒号，表明要嵌入一个对象-->
               <!--对象的内容是什么？其实就是下面router.push方法里面的参数内容！！-->
               <!--也就是说，不用router.push方法来定向，也可以直接放到这里来实现！-->
@@ -345,7 +356,7 @@ https://github.com/vuejs/vue-router
             </p>
         </div>
     </template>
-    
+
     <script>
         export default {
           name: 'App',
@@ -375,17 +386,17 @@ https://github.com/vuejs/vue-router
 以前讲解的内容，一个页面（画面）只有一个组件。这节课是一个画面中显示（组合）多个组件。GOGOGO~
 
 * router-view[name]  用于绑定某一个路由中的某一个组件。
-* components   注意这个复数s，表明什么？多组件嘛 
+* components   注意这个复数s，表明什么？多组件嘛
 
 实战学习：
-    
+
     * Header.vue    代表要显示的页面的页头
     * Sidebar.vue   菜单栏，边条
     * Detail.vue    数据区
     * router/index.js   将三个组件嵌入到路由当中
     * App.vue        在入口使用路由
-    
----setting/Header.vue 
+
+---setting/Header.vue
 <template>
     <div>
         <h1>标题栏</h1>
@@ -397,11 +408,11 @@ https://github.com/vuejs/vue-router
 <template>
     <div>
         <h1>边条</h1>
-        
+
     </div>
 </template>
-          
----setting/Detail.vue 
+
+---setting/Detail.vue
 <template>
     <div>
         <h1>详细显示</h1>
@@ -411,7 +422,7 @@ https://github.com/vuejs/vue-router
            时，Vue也完成能够为复杂的单面应用提供驱动。
         </p>
     </div>
-</template>        
+</template>
 
 ---router/index.js
 import SettingDetail from '@components/setting/Detail'
@@ -429,7 +440,7 @@ import SettingSidebar from '@components/setting/Sidebar'
           }
        }
    ]
-   
+
 ---App.vue
 <template>
     <div>
@@ -448,7 +459,7 @@ import SettingSidebar from '@components/setting/Sidebar'
                   <router-view name="myDetail"></router-view>
                 </td>
               <tr>
-        
+
               </tr>
             </table>
     </div>
@@ -461,18 +472,18 @@ import SettingSidebar from '@components/setting/Sidebar'
 **知识点：**
     redirect    重定向指令
     alias       路由别名
-    
+
 **实战学习：**
     * About.vue
     * router/index.js
     * App.vue
-    
+
 ---About.vue
 <template>
     <div>
         <h1>About Page</h1>
     </div>
-    
+
 ---router/index.js
 {
 path: '/about',
@@ -487,7 +498,7 @@ alias:'/aboutme'
 <!--这里学URL重定向-->
 <router-link to="/player/1">player1</router-link>
 <router-link to="/curry">curry</router-link>
-    
+
 </template>
 
 ```
@@ -498,20 +509,20 @@ alias:'/aboutme'
 **知识点：**
 
     * props 路由属性,注意这里的复数s，表示多个属性
-    
+
 实战学习：
 
     * User.vue
     * router/index.js
     * App.vue
-    
+
 +++User.vue
 <template>
     <div>
         <h1>User</h1>
         <p>uid={{uid}},{{nationality}}</p>
         <p>$route.params.uid={{$route.params.uid}}</p>
-        <p>$route.params.uid={{$route.params.nationality}}</p>        
+        <p>$route.params.uid={{$route.params.nationality}}</p>
     </div>
 </template>
 <script>
